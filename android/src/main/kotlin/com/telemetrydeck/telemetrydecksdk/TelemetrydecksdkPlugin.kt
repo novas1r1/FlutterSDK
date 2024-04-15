@@ -109,6 +109,7 @@ class TelemetrydecksdkPlugin: FlutterPlugin, MethodCallHandler {
       // initialize the client
       val builder = TelemetryManager.Builder()
         .appID(appID)
+        .providers(emptyList())
 
       apiBaseURL?.let {
         builder.baseURL(it)
