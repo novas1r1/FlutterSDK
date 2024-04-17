@@ -57,8 +57,7 @@ class TelemetrydecksdkPlugin: FlutterPlugin, MethodCallHandler {
     }
   }
 
-  private fun nativeUpdateDefaultUser(call: MethodCall,
-                                       result: Result) {
+  private fun nativeUpdateDefaultUser(call: MethodCall, result: Result) {
     val user = call.arguments<String>()
 
     coroutineScope.launch {
@@ -102,8 +101,8 @@ class TelemetrydecksdkPlugin: FlutterPlugin, MethodCallHandler {
       // additional optional parameters
       val apiBaseURL = arguments["apiBaseURL"] as? String?
       val defaultUser = arguments["defaultUser"] as? String?
-      val debug = arguments["debug"] as? Boolean
-      val testMode = arguments["testMode"] as? Boolean
+      val debug = arguments["debug"] as? Boolean ?: false
+      val testMode = arguments["testMode"] as? Boolean ?: false
 
 
       // initialize the client
